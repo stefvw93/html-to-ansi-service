@@ -2,6 +2,9 @@ import { Config, Effect } from "effect";
 import { type ConvertOptions, convertHtmlToText } from "./lib/html-to-text";
 
 const TARGET = Effect.runSync(Config.string("TARGET"));
+const PORT = Effect.runSync(
+	Config.number("PORT").pipe(Effect.orElseSucceed(() => 3000)),
+);
 
 const DEFAULT_OPTIONS: ConvertOptions = {
 	maxLineWidth: 80,
@@ -9,7 +12,7 @@ const DEFAULT_OPTIONS: ConvertOptions = {
 };
 
 const server = Bun.serve({
-	port: 3000,
+	port: PORT,
 	async fetch(request) {
 		const requestUrl = new URL(request.url);
 		const targetUrl = new URL(TARGET);

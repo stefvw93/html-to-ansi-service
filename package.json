@@ -10,6 +10,7 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "effect": "^3.19.14"
+    "effect": "^3.19.14",
+    "node-appwrite": "^21.1.0"
   }
 }
