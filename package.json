@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "effect": "^3.19.14",
-    "node-appwrite": "^21.1.0"
+    "hono": "^4.11.3"
   }
 }
