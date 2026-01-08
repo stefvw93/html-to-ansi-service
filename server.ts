@@ -15,5 +15,5 @@ if (Bun.env.NODE_ENV === "development") {
 }
 
 export default async function (context: AppwriteContext) {
-	return convert(context.req.url).then((text) => context.res(text));
+	return convert(context.req.url).then((text) => context.res.text(text));
 }
