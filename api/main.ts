@@ -1,4 +1,4 @@
-import { convertHtmlToTextFromUrl } from "../../lib";
+import { convertHtmlToTextFromUrl } from "../lib";
 
 export default {
 	fetch: async (request: Request) =>
