@@ -1,4 +1,5 @@
 import { ANSI, osc8, style } from "./ansi";
+import { SUBDOMAIN } from "../shared";
 
 /** Default print width for rulers and line wrapping */
 const DEFAULT_PRINT_WIDTH = 80;
@@ -496,7 +497,7 @@ export function convertHtmlToText(
 						if (showCurlSource) {
 							try {
 								const url = new URL(resolvedHref);
-								const curlUrl = url.hostname + url.pathname;
+								const curlUrl = `${SUBDOMAIN}.${url.hostname}${url.pathname}`;
 								state.output.push(
 									`${ANSI.dim} - $ ${ANSI.reset}${ANSI.green}curl ${ANSI.cyan}${curlUrl}${ANSI.reset}`,
 								);
