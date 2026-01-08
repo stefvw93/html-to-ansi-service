@@ -1,5 +1,5 @@
-import { ANSI, osc8, style } from "./ansi";
 import { SUBDOMAIN } from "../shared";
+import { ANSI, osc8, style } from "./ansi";
 
 /** Default print width for rulers and line wrapping */
 const DEFAULT_PRINT_WIDTH = 80;
