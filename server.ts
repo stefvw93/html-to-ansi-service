@@ -1,8 +1,8 @@
 import { convertHtmlToTextFromUrl as convert } from "./lib";
-import { PORT } from "./shared";
+import { LIVE, PORT } from "./shared";
 import type { AppwriteContext } from "./types/appwrite";
 
-if (Bun.env.NODE_ENV === "development") {
+if (LIVE) {
 	const server = Bun.serve({
 		port: PORT,
 		fetch: async (request) =>

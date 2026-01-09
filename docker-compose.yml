@@ -6,4 +6,5 @@ services:
     environment:
       - TARGET=https://stefvanwijchen.com
       - NODE_ENV=production
+      - LIVE=true
     restart: unless-stopped

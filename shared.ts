@@ -7,3 +7,8 @@ export const SUBDOMAIN = Effect.runSync(
 export const PORT = Effect.runSync(
 	Config.number("PORT").pipe(Effect.orElseSucceed(() => 3000)),
 );
+export const LIVE = Effect.runSync(
+	Config.boolean("LIVE").pipe(Effect.orElseSucceed(() => false)),
+);
+
+console.log({ TARGET, SUBDOMAIN, PORT, LIVE });
