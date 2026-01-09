@@ -1,9 +1,10 @@
 import { convertHtmlToTextFromUrl as convert } from "./lib";
-import { LIVE, PORT } from "./shared";
+import { HOST, LIVE, PORT } from "./shared";
 import type { AppwriteContext } from "./types/appwrite";
 
 if (LIVE) {
 	const server = Bun.serve({
+		hostname: HOST,
 		port: PORT,
 		fetch: async (request) =>
 			new Response(await convert(request.url), {
