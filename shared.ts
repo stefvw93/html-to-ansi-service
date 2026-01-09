@@ -2,7 +2,7 @@ import { Config, Effect } from "effect";
 
 export const TARGET = Effect.runSync(Config.string("TARGET"));
 export const SUBDOMAIN = Effect.runSync(
-	Config.string("SUBDOMAIN").pipe(Effect.orElseSucceed(() => "text")),
+	Config.string("SUBDOMAIN").pipe(Effect.orElseSucceed(() => "")),
 );
 export const HOST = Effect.runSync(
 	Config.string("HOST").pipe(Effect.orElseSucceed(() => "localhost")),
